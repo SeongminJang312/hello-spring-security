@@ -52,5 +52,25 @@
         </div>
     </div>
 </div>
+<!-- 실습 증적 푸터 -->
+<footer class="text-center mt-5 py-3 text-muted border-top">
+    실습 수행 일시: <span id="datetime"></span> &nbsp;│&nbsp; 학번: 본인학번 &nbsp;│&nbsp; 성명: 장성민
+</footer>
+
+<script>
+    function updateTime() {
+        const now = new Date();
+        const days = ['일','월','화','수','목','금','토'];
+        const str = now.getFullYear() + '년 ' +
+            (now.getMonth()+1) + '월 ' +
+            now.getDate() + '일 (' + days[now.getDay()] + ') ' +
+            String(now.getHours()).padStart(2,'0') + ':' +
+            String(now.getMinutes()).padStart(2,'0') + ':' +
+            String(now.getSeconds()).padStart(2,'0');
+        document.getElementById('datetime').textContent = str;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+</script>
 </body>
 </html>
